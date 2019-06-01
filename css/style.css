@@ -46,17 +46,61 @@ a {
   background-color: #663d15;
 }
 
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.main-header {
+  background-color: #000000;
+    margin-bottom: 290px;
+}
+
 .main-navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
+}
 
-  background-color: #000000;
+.main-header-logo {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+}
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .site-navigation,
 .user-navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    
   list-style: none;
+    
+    margin: 0;
+    padding: 0;
 }
 
 .site-navigation a,
@@ -71,11 +115,27 @@ a {
   background-color: #242424;
 }
 
+.features {
+    margin-bottom: 80px;
+}
+
 .features-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    
   list-style: none;
+    
+    margin: 0;
+    padding: 0;
 }
 
 .feature-item {
+    width: 300px;
+    
   text-align: center;
 }
 
@@ -86,12 +146,31 @@ a {
 }
 
 .index-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    
   color: #000000;
 
+    padding: 50px 80px;
+    margin-bottom: 35px;
   background-color: #f8f5f2;
   background-image: url("../img/pattern-light.jpg");
   background-position: 0 0;
   background-repeat: repeat;
+}
+
+.news,
+.contacts {
+    width: 380px;
+}
+
+.gallery,
+.appointment {
+    width: 300px;
 }
 
 .index-columns h2 {
@@ -125,11 +204,16 @@ a {
 
 .main-footer {
   color: #ffffff;
-
-  background-color: #212121;
+    background-color: #212121;
   background-image: url("../img/pattern-dark.jpg");
   background-position: 0 0;
   background-repeat: repeat;
+}
+
+.main-footer .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .footer-contacts a {
@@ -142,12 +226,20 @@ a {
   text-decoration: none;
 }
 
+.footer-contacts {
+    margin: 0;
+    margin-right: 80px;
+}
+
 .footer-social {
   text-align: center;
 }
 
 .footer-social ul {
   list-style: none;
+    
+    margin: 0;
+    padding: 0;
 }
 
 .social-button {
@@ -156,6 +248,8 @@ a {
 
 .footer-copyright {
   text-align: center;
+    
+    margin-left: auto;
 }
 
 .footer-copyright .button:hover,
