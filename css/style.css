@@ -59,9 +59,10 @@ a {
   overflow: hidden;
 }
 
-.main-header {
-  background-color: #000000;
-    margin-bottom: 290px;
+.wrapper {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .main-navigation {
@@ -70,7 +71,13 @@ a {
     display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     
   font-size: 16px;
   line-height: 20px;
@@ -78,17 +85,25 @@ a {
 }
 
 .main-header-logo {
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    -webkit-transform: translate(-50%);
-    transform: translate(-50%);
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
 }
 
-.wrapper {
-    width: 960px;
-    margin: 0 auto;
-    padding: 0 10px;
+.main-navigation-container {
+    background-color: #000000;
+    
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.main-navigation-container .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .site-navigation,
@@ -96,6 +111,8 @@ a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     
   list-style: none;
     
@@ -208,6 +225,12 @@ a {
   background-image: url("../img/pattern-dark.jpg");
   background-position: 0 0;
   background-repeat: repeat;
+    
+    margin-top: 65px;
+}
+
+.inner-page .main-footer {
+    margin-top: 50px;
 }
 
 .main-footer .wrapper {
@@ -227,12 +250,15 @@ a {
 }
 
 .footer-contacts {
+    width: 320px;
     margin: 0;
     margin-right: 80px;
 }
 
 .footer-social {
-  text-align: center;
+    width: 145px;
+    
+    text-align: center;
 }
 
 .footer-social ul {
@@ -247,8 +273,9 @@ a {
 }
 
 .footer-copyright {
-  text-align: center;
+    text-align: center;
     
+    width: 140px;
     margin-left: auto;
 }
 
@@ -302,7 +329,37 @@ a {
   text-decoration: none;
 }
 
+/* CATALOG */
+
+.inner-page .main-header {
+    background-color: #000000;
+    margin-bottom: 55px;
+}
+
+.inner-page .main-navigation {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.inner-page .main-header-logo {
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
+}
+
+.inner-page .user-navigation {
+    margin-left: auto;
+}
+
 .page-title {
+    margin: 0;
+    margin-bottom: 18px;
+    
     font-size: 30px;
     line-height: 42px;
 }
@@ -311,6 +368,10 @@ a {
     list-style: none;
     font-size: 14px;
     line-height: 24px;
+    
+    padding: 0;
+    margin: 0;
+    margin-bottom: 55px;
 }
 
 .breadcrumbs a {
@@ -324,6 +385,28 @@ a {
 
 .breadcrumbs-current {
     color: #aba9a7;
+}
+
+.flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.catalog-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.filters {
+    width: 220px;
 }
 
 .filter-form fieldset {
@@ -356,14 +439,38 @@ a {
     line-height: 18px;
 }
 
+.catalog {
+    width: 700px;
+}
+
 .catalog-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    
     list-style: none;
+    
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
 }
 
 .catalog-item {
+    width: 220px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    
     background-color: #f7f7f7;
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-item:nth-child(3n) {
+    margin-right: 0;
 }
 
 .catalog-item:hover {
@@ -398,7 +505,14 @@ a {
 }
 
 .pagination-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    
     list-style: none;
+    
+    margin: 0;
+    padding: 0;
 }
 
 .pagination-item a {
@@ -424,18 +538,50 @@ a {
     background-color: #ffffff;
 }
 
+/* CATALOG ITEM */
+
+.product-photos {
+    width: 460px;
+}
+
 .product-photo-full {
     -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 .product-photo-preview {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    
     list-style: none;
+    
+    margin: 0;
+    padding: 0;
 }
 
 .product-photo-small {
     -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    
+    width: 140px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.product-photo-small:nth-child(3n) {
+    margin-right: 0;
+}
+
+.product-info {
+    width: 390px;
 }
 
 .product-cod {
@@ -458,9 +604,33 @@ a {
     list-style: none;
 }
 
+/* PRICE */
+
 .lead {
     font-size: 48px;
     line-height: 48px;
+    
+    margin: 0;
+    margin-bottom: 75px;
+}
+
+.prices-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    
+    margin-bottom: 65px;
+}
+
+.facilities {
+    width: 300px;
+}
+
+.service-prices {
+    width: 460px;
 }
 
 .facilities h2,
@@ -468,11 +638,17 @@ a {
 .about-us h2 {
     font-size: 24px;
     line-height: 30px;
+    
+    margin: 0;
+    margin-bottom: 37px;
 }
 
 .uncompressed-list {
     list-style: none;
     line-height: 27px;
+    
+    margin: 0;
+    padding: 0;
 }
 
 .service-prices table {
@@ -482,6 +658,47 @@ a {
 .service-prices td {
     border: 2px solid #000000;
 }
+
+.about-us-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.about-us-columns p {
+    width: 385px;
+    margin: 0;
+    margin-right: 95px;
+}
+
+.about-us-columns p:nth-child(2n) {
+    margin-right: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
